@@ -1,13 +1,84 @@
 <template>
-  <div class="home">
-    TELA DE HOME
+  <div>
+    <div class="d-flex d-sm-none">
+      <template>
+        <v-carousel :show-arrows="false" cirle height="120px">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </template>
+    </div>
+
+    <div class="d-none d-sm-flex d-md-none">
+      <template>
+        <v-carousel :show-arrows="false" cirle height="220px">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </template>
+    </div>
+
+    <div class="d-none d-md-flex d-lg-none">
+      <template>
+        <v-carousel :show-arrows="false" cirle height="320px">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </template>
+    </div>
+
+    <div class="d-none d-lg-flex d-xl-none">
+      <template>
+        <v-carousel :show-arrows="false" cirle height="420px">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </template>
+    </div>
+
+    <div class="d-none d-xl-flex">
+      <template>
+        <v-carousel :show-arrows="false" cirle height="720px">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </template>
+    </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
-  name: "Home"
+  data(){
+    return {
+      items:[
+        {
+          src:'https://linhadermotivin.com.br/content/user_4/images/Banners-INTERNAS-1200x410-BRASIL-4%281%29.jpg',
+        },
+        {
+          src:'https://linhadermotivin.com.br/content/user_4/images/Banners-INTERNAS-1200x410-BRASIL-1.jpg',
+        },
+        {
+          src:'https://linhadermotivin.com.br/content/user_1/images/dermotivin-control-banner.jpeg',
+        },
+      ]
+    }
+  }
 };
 </script>
