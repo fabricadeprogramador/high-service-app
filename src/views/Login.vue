@@ -10,7 +10,7 @@
         align="center"
         justify="center"
       >
-        <v-card height="60%" width="60%" class="elevation-12 pa-10">
+        <v-card width="65%" class="elevation-12 pa-6">
           <v-row justify="center">
             <v-avatar class="ma-3" size="90">
               <img src="../assets/logo_HS.jpg">
@@ -44,10 +44,17 @@
            </v-row>
         <v-row justify="center">
           <div>
-            <v-btn color="primary" dark>ENTRAR</v-btn>
+            <v-btn color="primary" dark >ENTRAR</v-btn>
           </div>
         </v-row>
-            
+        <v-row class="pa-5">
+          <v-col cols="12" sm="12" md="6" lg="6" class="text-start">
+           <v-btn text small color="primary" class="text-decoration-underline text-start">Recuperar Senha</v-btn>
+          </v-col>
+          <v-col cols="12" sm="12" md="6" lg="6" class="text-end">
+           <v-btn text small color="primary" class="text-decoration-underline">Novo Cadastro</v-btn>
+          </v-col>
+        </v-row> 
         </v-card>
       </v-row>
     </v-parallax>
