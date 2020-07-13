@@ -1,5 +1,18 @@
 <template>
   <div>
+    <v-row>
+    
+    <div class="d-flex flex-column mb-2 pa-3">
+    <v-text-field 
+        v-model="search"
+        prepend-inner-icon="mdi-magnify"
+        label="Buscar Produtos"
+        outlined
+        dense
+      ></v-text-field>
+    </div>
+      <v-spacer></v-spacer>
+
     <div class="d-flex align-end flex-column mb-2">
       <v-icon
         align-self="right"
@@ -10,6 +23,9 @@
         v-bind:title="msnLogOut"
       >mdi-logout</v-icon>
     </div>
+
+    </v-row>
+
 
     <div class="d-flex d-sm-none">
       <template>

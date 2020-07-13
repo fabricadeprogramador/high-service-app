@@ -149,3 +149,5 @@
     }),
   }
 </script>
+
+export default HelloWorld;
