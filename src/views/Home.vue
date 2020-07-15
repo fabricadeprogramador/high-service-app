@@ -29,7 +29,7 @@
 
     <div class="d-flex d-sm-none">
       <template>
-        <v-carousel :show-arrows="false" cirle height="120px">
+        <v-carousel circle :show-arrows="false" height="120px" hide-delimiter-background>
           <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
         </v-carousel>
       </template>
@@ -37,7 +37,7 @@
 
     <div class="d-none d-sm-flex d-md-none">
       <template>
-        <v-carousel :show-arrows="false" cirle height="220px">
+        <v-carousel circle :show-arrows="false" height="220px"  hide-delimiter-background>
           <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
         </v-carousel>
       </template>
@@ -45,7 +45,7 @@
 
     <div class="d-none d-md-flex d-lg-none">
       <template>
-        <v-carousel :show-arrows="false" cirle height="320px">
+        <v-carousel cirle :show-arrows="false"  height="320px" hide-delimiter-background>
           <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
         </v-carousel>
       </template>
@@ -53,7 +53,7 @@
 
     <div class="d-none d-lg-flex d-xl-none">
       <template>
-        <v-carousel :show-arrows="false" cirle height="420px">
+        <v-carousel circle :show-arrows="false" height="420px" hide-delimiter-background>
           <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
         </v-carousel>
       </template>
@@ -61,7 +61,7 @@
 
     <div class="d-none d-xl-flex">
       <template>
-        <v-carousel :show-arrows="false" cirle height="720px">
+        <v-carousel circle :show-arrows="false" height="720px" hide-delimiter-background>
           <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
         </v-carousel>
       </template>
