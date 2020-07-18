@@ -1,8 +1,10 @@
 <template>
   <div>
     <v-row>
-      <div class="d-flex flex-column mb-2 pa-3">
+      <div class="d-flex flex-column mb-0 pa-3" width="100%">
         <v-text-field
+          class="mt-5"
+          @click="buscaProduto()"
           v-model="search"
           prepend-inner-icon="mdi-magnify"
           label="Buscar Produtos"
@@ -12,8 +14,9 @@
       </div>
       <v-spacer></v-spacer>
 
-      <div class="d-flex align-end flex-column mb-2">
+      <div class="d-flex align-end flex-column mb-0">
         <v-icon
+          class="mr-2"
           align-self="right"
           size="20"
           v-if="clienteLogado"
@@ -119,7 +122,7 @@
             Últimos produtos adicionados
           </div>
         </v-container>
-        <v-container class="pt-0" fluid>
+        <v-container class="pa-0" fluid>
           <v-row dense>
             <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
               <v-card>
@@ -157,11 +160,14 @@
 
 <script>
 import { Money } from "v-money";
+
 export default {
   components: { Money },
+
   data() {
     return {
       search: "",
+
       items: [
         {
           src:
@@ -176,6 +182,7 @@ export default {
             "https://linhadermotivin.com.br/content/user_1/images/dermotivin-control-banner.jpeg",
         },
       ],
+
       cards: [
         {
           title: "Tênis Azul Claro",
@@ -202,6 +209,7 @@ export default {
           flex: 6,
         },
       ],
+
       money: {
         decimal: ",",
         thousands: ".",
@@ -210,10 +218,13 @@ export default {
         precision: 2,
         masked: false,
       },
+
       clienteLogado: true,
+
       msnLogOut: "Fazer o logout",
-      methods: {
-        logOut() {},
+      logOut() {},
+      buscaProduto() {
+        this.$router.push("/ResultadoPesquisa");
       },
     };
   },
@@ -224,9 +235,11 @@ export default {
   font-size: 0.9em;
   font-weight: 500;
 }
+
 .tituloDeUmCardDoGrid {
   font-size: 0.8em;
 }
+
 .valorDeUmCardDoGrid {
   font-size: 0.9em;
 }

@@ -139,7 +139,7 @@
         <v-btn color="primary" :disabled="!valid">Salvar</v-btn>
       </v-col>
       <v-col>
-        <v-btn color="primary">Cancelar</v-btn>
+        <v-btn color="primary" @click="cancelar()">Cancelar</v-btn>
       </v-col>
       <v-spacer></v-spacer>
     </v-row>
@@ -216,6 +216,10 @@ export default {
       ],
       voltar() {
         this.$router.push("/Login");
+      },
+      cancelar() {
+        this.$refs.form.reset();
+        // this.$router.push("/Login");
       },
     };
   },
