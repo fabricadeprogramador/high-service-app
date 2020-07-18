@@ -1,6 +1,18 @@
 <template>
   <v-container>
-    <v-container fluid width="100%" class="pa-0">
+          <v-btn
+        :ripple="false"
+        text
+        small
+        color="white"
+        class="indigo--text text--darken-4 no-uppercase pa-0"
+        width="auto"
+        height="auto"
+        @click="voltar()"
+        >< Voltar</v-btn
+      >
+    </div>
+    <v-container fluid width="100%" class="pa-0 mt-3">
       <v-text-field
         v-model="search"
         prepend-inner-icon="mdi-magnify"
@@ -10,7 +22,7 @@
       ></v-text-field>
     </v-container>
     <div v-for="card in cards" :key="card.title">
-      <v-card @click="acessaProduto()" class="my-2">
+      <v-card @click="detalhaProduto()" class="my-2">
         <v-layout fluid>
           <v-img
             class="align-start mt-1 ml-1 pa-0"
@@ -87,9 +99,12 @@ export default {
         precision: 2,
         masked: false,
       },
-      acessaProduto() {
-        this.$router.push("/");
+      detalhaProduto() {
+        this.$router.push("/DetalheProdutoServico");
       },
+      voltar(){
+        this.$router.push("/");
+      }
     };
   },
 };

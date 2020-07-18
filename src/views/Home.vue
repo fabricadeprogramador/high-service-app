@@ -115,7 +115,7 @@
 
     <template>
       <div class="mx-auto mt-5" max-width="500">
-        <v-container class="pb-0 mt-5">
+        <v-container class="pb-0 px-0 mt-5">
           <div
             class="tituloGridOfCards indigo--text text--darken-4 align-start pa-0"
           >
@@ -125,7 +125,7 @@
         <v-container class="pa-0" fluid>
           <v-row dense>
             <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-              <v-card>
+              <v-card @click="detalhaProduto()">
                 <v-img
                   :src="card.src"
                   class="white--text align-end"
@@ -225,6 +225,9 @@ export default {
       logOut() {},
       buscaProduto() {
         this.$router.push("/ResultadoPesquisa");
+      },
+      detalhaProduto() {
+        this.$router.push("/DetalheProdutoServico");
       },
     };
   },

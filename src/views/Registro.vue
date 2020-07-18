@@ -2,6 +2,7 @@
   <v-form v-model="valid" ref="form">
     <div>
       <v-btn
+        :ripple="false"
         text
         small
         color="white"

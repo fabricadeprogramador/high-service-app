@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Registro from "../views/Registro.vue";
 import ResultadoPesquisa from "../views/ResultadoPesquisa.vue";
+import DetalheProdutoServico from "../views/DetalheProdutoServico.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/ResultadoPesquisa",
     name: "ResultadoPesquisa",
     component: ResultadoPesquisa,
+  },
+  {
+    path: "/DetalheProdutoServico",
+    name: "DetalheProdutoServico",
+    component: DetalheProdutoServico,
   },
 ];
 
