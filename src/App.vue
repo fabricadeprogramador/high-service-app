@@ -7,17 +7,17 @@
 
     <!-- Área de navegação -->
     <v-bottom-navigation v-model="bottomNav" shift app>
-      <v-btn>
+      <v-btn @click="bottomNav = 0">
         <span>Video</span>
         <v-icon>mdi-television-play</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn @click="bottomNav = 1">
         <span>Music</span>
         <v-icon>mdi-music-note</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn @click="bottomNav = 2">
         <span>Book</span>
         <v-icon>mdi-book</v-icon>
       </v-btn>
