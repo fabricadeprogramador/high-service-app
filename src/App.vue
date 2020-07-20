@@ -44,9 +44,9 @@ export default {
         rota: "transacoes",
       },
       {
-        titulo: "Login",
-        icone: "mdi-login",
-        rota: "login",
+        titulo: "Perfil",
+        icone: "mdi-account",
+        rota: "perfil",
       },
     ],
   }),
