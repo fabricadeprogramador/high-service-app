@@ -6,6 +6,7 @@ import Registro from "../views/Registro.vue";
 import ResultadoPesquisa from "../views/ResultadoPesquisa.vue";
 import DetalheProdutoServico from "../views/DetalheProdutoServico.vue";
 import Perfil from "../views/Perfil.vue";
+import Pedidos from "../views/Pedidos.vue";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/Perfil",
     name: "Perfil",
     component: Perfil,
+  },
+  {
+    path: "/Pedidos",
+    name: "Pedidos",
+    component: Pedidos,
   },
 ];
 
