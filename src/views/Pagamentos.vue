@@ -3,6 +3,7 @@
         <v-for>
         <v-col cols="12">
            <v-card
+           
             color="#385F73"
             dark>
                 <v-col cols="12">
