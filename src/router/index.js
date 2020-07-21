@@ -7,6 +7,7 @@ import ResultadoPesquisa from "../views/ResultadoPesquisa.vue";
 import DetalheProdutoServico from "../views/DetalheProdutoServico.vue";
 import Perfil from "../views/Perfil.vue";
 import Pedidos from "../views/Pedidos.vue";
+import Pagamentos from "../views/Pagamentos.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/Pedidos",
     name: "Pedidos",
     component: Pedidos,
+  },
+  {
+    path: "/Pagamentos",
+    name: "Pagamentos",
+    component: Pagamentos,
   },
 ];
 
