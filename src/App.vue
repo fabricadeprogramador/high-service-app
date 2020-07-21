@@ -1,27 +1,29 @@
 <template>
   <v-app>
     <!-- Área do conteúdo -->
-    <v-content class="ma-3" app>
+    <v-main class="ma-3" app>
       <router-view></router-view>
-    </v-content>
+    </v-main>
 
     <!-- Área de navegação -->
-    <v-bottom-navigation v-model="bottomNav" shift app>
-      <v-btn>
-        <span>Video</span>
-        <v-icon>mdi-television-play</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Music</span>
-        <v-icon>mdi-music-note</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Book</span>
-        <v-icon>mdi-book</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
+    <v-list>
+      <v-bottom-navigation :value="activeBtn" grow color="indigo">
+        <v-list-item
+          v-for="item in menu"
+          :key="item.titulo"
+          link
+          router
+          :to="item.rota"
+        >
+          <v-list-item-action>
+            <v-icon>{{ item.icone }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.titulo }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-bottom-navigation>
+    </v-list>
   </v-app>
 </template>
 
@@ -29,19 +31,25 @@
 export default {
   name: "App",
   data: () => ({
-    bottomNav: 2
+    activeBtn: "",
+    menu: [
+      {
+        titulo: "Home",
+        icone: "mdi-home",
+        rota: "/",
+      },
+      {
+        titulo: "Cart",
+        icone: "mdi-cart",
+        rota: "transacoes",
+      },
+      {
+        titulo: "Perfil",
+        icone: "mdi-account",
+        rota: "perfil",
+      },
+    ],
   }),
-  computed: {
-    color() {
-      switch (this.bottomNav) {
-        case 0:
-          return "blue-grey";
-        case 1:
-          return "teal";
-        case 2:
-          return "brown";
-      }
-    }
-  }
+  computed: {},
 };
 </script>
