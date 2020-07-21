@@ -10,7 +10,7 @@
         width="auto"
         height="auto"
         @click="voltar()"
-        >< Voltar</v-btn
+        >&#60; Voltar</v-btn
       >
     </div>
 
@@ -28,7 +28,7 @@
 
     <div
       class="empresaVendedora mt-2 indigo--text text--darken-4"
-      v-text="'Oferecido por: ' + empresaVendedora.empresa"
+      v-text="'Vendedor: ' + empresaVendedora.empresa"
     ></div>
 
     <div class="mt-4">

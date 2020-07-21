@@ -5,6 +5,7 @@ import Login from "../views/Login.vue";
 import Registro from "../views/Registro.vue";
 import ResultadoPesquisa from "../views/ResultadoPesquisa.vue";
 import DetalheProdutoServico from "../views/DetalheProdutoServico.vue";
+import Carrinho from "../views/Carrinho.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/DetalheProdutoServico",
     name: "DetalheProdutoServico",
     component: DetalheProdutoServico,
+  },
+  {
+    path: "/Carrinho",
+    name: "Carrinho",
+    component: Carrinho,
   },
 ];
 

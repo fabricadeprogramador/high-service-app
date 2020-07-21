@@ -1,17 +1,16 @@
 <template>
   <v-container>
-          <v-btn
-        :ripple="false"
-        text
-        small
-        color="white"
-        class="indigo--text text--darken-4 no-uppercase pa-0"
-        width="auto"
-        height="auto"
-        @click="voltar()"
-        >< Voltar</v-btn
-      >
-    </div>
+    <v-btn
+      :ripple="false"
+      text
+      small
+      color="white"
+      class="indigo--text text--darken-4 no-uppercase pa-0"
+      width="auto"
+      height="auto"
+      @click="voltar()"
+      >&#60; Voltar</v-btn
+    >
     <v-container fluid width="100%" class="pa-0 mt-3">
       <v-text-field
         v-model="search"
@@ -102,9 +101,9 @@ export default {
       detalhaProduto() {
         this.$router.push("/DetalheProdutoServico");
       },
-      voltar(){
+      voltar() {
         this.$router.push("/");
-      }
+      },
     };
   },
 };

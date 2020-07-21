@@ -41,7 +41,7 @@ export default {
       {
         titulo: "Cart",
         icone: "mdi-cart",
-        rota: "transacoes",
+        rota: "Carrinho",
       },
       {
         titulo: "Login",
