@@ -9,6 +9,7 @@ import Carrinho from "../views/Carrinho.vue";
 import Perfil from "../views/Perfil.vue";
 import Pedidos from "../views/Pedidos.vue";
 import Pagamentos from "../views/Pagamentos.vue";
+import MeusDadosConsulta from "../views/MeusDadosConsulta.vue";
 
 Vue.use(VueRouter);
 
@@ -42,10 +43,8 @@ const routes = [
     path: "/Carrinho",
     name: "Carrinho",
     component: Carrinho,
-    path: "/Perfil",
-    name: "Perfil",
-    component: Perfil,
   },
+  { path: "/Perfil", name: "Perfil", component: Perfil },
   {
     path: "/Pedidos",
     name: "Pedidos",
@@ -55,6 +54,11 @@ const routes = [
     path: "/Pagamentos",
     name: "Pagamentos",
     component: Pagamentos,
+  },
+  {
+    path: "/MeusDadosConsulta",
+    name: "MeusDadosConsulta",
+    component: MeusDadosConsulta,
   },
 ];
 

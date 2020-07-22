@@ -41,7 +41,12 @@
         </v-col>
         <v-col cols="3">
           <v-row align="center" justify="center">
-            <v-icon align-end class="pa-2">mdi-delete-outline</v-icon>
+            <v-icon
+              @click="removeProdutoServico(produtoServico)"
+              align-end
+              class="pa-2"
+              >mdi-delete-outline</v-icon
+            >
           </v-row>
           <v-row align="center" justify="center">
             <v-flex xs1>
@@ -91,7 +96,7 @@
       class="indigo--text text--darken-4 no-uppercase pa-0"
       width="auto"
       height="auto"
-      @click="voltar()"
+      @click="cadastrarNovoCartao()"
       >&#43; Novo Cartão</v-btn
     >
     <v-row class="mt-15" align="center" justify="center">
@@ -186,6 +191,7 @@ export default {
             "https://thumbs.dreamstime.com/b/sneakers-sports-shoes-side-view-white-background-blue-slippers-177145333.jpg",
           link: "/DetalhaProduto",
           quantidade: 1,
+          _id: "111",
         },
         {
           title: "Serviço de Engenharia",
@@ -195,6 +201,7 @@ export default {
             "https://thumbs.dreamstime.com/b/surveyors-work-two-land-31349173.jpg",
           link: "/DetalhaProduto",
           quantidade: 1,
+          _id: "222",
         },
         {
           title: "Serviço de Manicure",
@@ -204,18 +211,9 @@ export default {
             "https://thumbs.dreamstime.com/b/manicure-cat-s-eye-blue-stained-glass-gel-polish-picture-rhinestones-nails-85399835.jpg",
           link: "/DetalhaProduto",
           quantidade: 1,
+          _id: "333",
         },
       ],
-      produtoServicoDetalhado: {
-        nome: "Caderno Pequeno",
-        tipo: "Produto",
-        valor: 10,
-        descricao: "Caderno escolar tamanho pequeno",
-        ativo: false,
-        _id: "5ef296df1fbc8709b0c9da47",
-        src:
-          "https://images-na.ssl-images-amazon.com/images/I/31qbRG1OonL._AC_SY400_.jpg",
-      },
       empresaVendedora: {
         _id: "5ef14b221ded992e3c0ebd20",
         empresa: "papelaria",
@@ -228,7 +226,20 @@ export default {
         precision: 2,
         masked: false,
       },
-
+      removeProdutoServico(produtoServico) {
+        let stop = false;
+        let i = 0;
+        while (stop == false || i < this.carrinho.length) {
+          if (produtoServico._id == this.carrinho[i]._id) {
+            this.carrinho.splice(i, 1);
+            stop = true;
+          }
+          i++;
+        }
+      },
+      cadastrarNovoCartao() {
+        this.$router.push("/Pagamentos");
+      },
       voltar() {
         this.$router.push("/");
       },
