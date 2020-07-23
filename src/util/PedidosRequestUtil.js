@@ -1,5 +1,5 @@
-// const API_URL = "https://high-service-api.herokuapp.com/transacao";
-const API_URL = "http://localhost:3000/transacao";
+const API_URL = "https://high-service-api.herokuapp.com/transacao";
+// const API_URL = "http://localhost:3000/transacao";
 import axios from "axios";
 
 export default {
