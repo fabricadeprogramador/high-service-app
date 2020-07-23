@@ -10,6 +10,8 @@ import Perfil from "../views/Perfil.vue";
 import Pedidos from "../views/Pedidos.vue";
 import Pagamentos from "../views/Pagamentos.vue";
 import MeusDadosConsulta from "../views/MeusDadosConsulta.vue";
+import MeusDadosEdicao from "../views/MeusDadosEdicao.vue";
+import CadastroCartao from "../views/CadastroCartao.vue";
 
 Vue.use(VueRouter);
 
@@ -59,6 +61,16 @@ const routes = [
     path: "/MeusDadosConsulta",
     name: "MeusDadosConsulta",
     component: MeusDadosConsulta,
+  },
+  {
+    path: "/MeusDadosEdicao",
+    name: "MeusDadosEdicao",
+    component: MeusDadosEdicao,
+  },
+  {
+    path: "/CadastroCartao",
+    name: "CadastroCartao",
+    component: CadastroCartao,
   },
 ];
 

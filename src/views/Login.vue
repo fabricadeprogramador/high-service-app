@@ -40,9 +40,13 @@
               </v-col>
             </v-row>
               <v-row justify="center">
-                <div>
-                  <v-btn color="primary" dark >ENTRAR</v-btn>
-                </div>
+                <v-row>
+                    <v-col cols="12">
+                      <router-link to="/" class="text-decoration-none">
+                          <v-btn block color="blue" dark flat>Entrar</v-btn>
+                      </router-link>
+                      </v-col>
+                    </v-row>
               </v-row>
               <v-row class="pa-5">
                 <v-col cols="12" sm="6" md="6" lg="6" class="text-center">

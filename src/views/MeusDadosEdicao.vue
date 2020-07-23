@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form v-model="valid" ref="form">
     <div>
       <v-btn
         :ripple="false"
@@ -27,116 +27,125 @@
     </div>
     <v-row>
       <v-spacer></v-spacer>
-      <h2 class="mt-2">Consulta</h2>
+      <h2 class="mt-2">Edição</h2>
       <v-spacer></v-spacer>
     </v-row>
     <div class="pa-3">
       <h3>Meus dados:</h3>
       <v-text-field
-        v-model="meusDadosConsulta.nome"
+        v-model="meusDadosEdicao.nome"
         label="Nome Completo"
+        :rules="nameRules"
+        counter
+        :maxlength="30"
         type="text"
-        readonly
       ></v-text-field>
 
       <v-text-field
         v-mask="'###.###.###-##'"
-        v-model="meusDadosConsulta.cpf"
+        v-model="meusDadosEdicao.cpf"
         class="inputNumeroLimpo"
         label="CPF"
+        :rules="cpfRules"
+        :maxlength="14"
         type="text"
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.tel"
+        v-model="meusDadosEdicao.tel"
         label="Telefone"
         v-mask="['(##) ####-####', '(##) #####-####']"
+        :rules="telRules"
+        :maxlength="15"
         type="text"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.email"
+        v-model="meusDadosEdicao.email"
         label="E-mail"
+        :rules="emailRules"
         type="text"
+        counter
         :maxlength="30"
-        readonly
       ></v-text-field>
 
       <v-select
-        v-model="meusDadosConsulta.sexo"
+        v-model="meusDadosEdicao.sexo"
         :items="sexo"
         label="Sexo"
-        readonly
+        :rules="sexoRules"
       ></v-select>
 
       <h3 class="mt-5">Endereço:</h3>
 
       <v-text-field
-        v-model="meusDadosConsulta.logradouro"
+        v-model="meusDadosEdicao.logradouro"
         label="Logradouro"
+        :rules="logradouroRules"
         type="text"
+        counter
         :maxlength="30"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.nr"
+        v-model="meusDadosEdicao.nr"
         label="Número"
         v-mask="'######'"
         type="text"
         :maxlength="6"
         class="inputNumeroLimpo"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.complemento"
+        v-model="meusDadosEdicao.complemento"
         label="Complemento"
         type="text"
+        counter
         :maxlength="30"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.bairro"
+        v-model="meusDadosEdicao.bairro"
         label="Bairro"
+        :rules="bairroRules"
         type="text"
+        counter
         :maxlength="30"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.cep"
+        v-model="meusDadosEdicao.cep"
         v-mask="'#####-###'"
         label="CEP"
+        :rules="cepRules"
         type="text"
         :maxlength="9"
-        readonly
       ></v-text-field>
 
       <v-text-field
-        v-model="meusDadosConsulta.cidade"
+        v-model="meusDadosEdicao.cidade"
         label="Cidade"
+        :rules="cidadeRules"
         type="text"
-        readonly
+        counter
+        :maxlength="30"
       ></v-text-field>
 
       <v-select
-        v-model="meusDadosConsulta.uf"
+        v-model="meusDadosEdicao.uf"
         :items="uf"
         label="UF"
-        readonly
+        :rules="ufRules"
       ></v-select>
     </div>
     <v-row class="ma-5">
       <v-spacer></v-spacer>
       <v-col>
-        <v-btn class="no-uppercase" @click="editar()" color="primary"
-          >Editar Meus Dados</v-btn
-        >
+        <v-btn color="primary" :disabled="!valid">Salvar</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn color="primary" @click="cancelar()">Cancelar</v-btn>
       </v-col>
       <v-spacer></v-spacer>
     </v-row>
@@ -149,6 +158,40 @@ export default {
   directives: { mask },
   data() {
     return {
+      valid: true,
+      meusDadosEdicao: {
+        _id: "5ed6e10a34ec181824841fcf",
+        nome: "Jao",
+        cpf: "231.181.684-48",
+        sexo: "F",
+        tel: "(67)11111-1111",
+        email: "testeemail@teste.com",
+        logradouro: "Rua da banana",
+        nr: "25",
+        complemento: "teste1",
+        bairro: "teste1",
+        cep: "11111-111",
+        cidade: "teste1",
+        uf: "MS",
+        ativo: true,
+        __v: 0,
+      },
+      nameRules: [(v) => (!!v && v.length >= 4) || "Digite o nome do cliente"],
+      cpfRules: [
+        (v) => (!!v && v.length == 14) || "Digite o CPF com 11 dígitos",
+      ],
+      telRules: [
+        (v) =>
+          (!!v && v.length >= 14) ||
+          "Digite o telefone com pelo menos 8 números",
+      ],
+      emailRules: [(v) => /.+@.+\..+/.test(v) || "Digite um e-mail válido"],
+      sexoRules: [(v) => !!v || "Selecione o sexo"],
+      logradouroRules: [(v) => (!!v && v.length >= 6) || "Digite o logradouro"],
+      bairroRules: [(v) => (!!v && v.length >= 6) || "Digite o bairro"],
+      cepRules: [(v) => (!!v && v.length == 9) || "Digite o CEP com 8 dígitos"],
+      cidadeRules: [(v) => (!!v && v.length >= 4) || "Digite o nome da cidade"],
+      ufRules: [(v) => !!v || "Selecione o estado"],
       sexo: ["M", "F"],
       uf: [
         "AC",
@@ -179,28 +222,12 @@ export default {
         "SP",
         "TO",
       ],
-      meusDadosConsulta: {
-        _id: "5ed6e10a34ec181824841fcf",
-        nome: "Jao",
-        cpf: "231.181.684-48",
-        sexo: "F",
-        tel: "(67)11111-1111",
-        email: "testeemail@teste.com",
-        logradouro: "Rua da banana",
-        nr: "25",
-        complemento: "teste1",
-        bairro: "teste1",
-        cep: "11111-111",
-        cidade: "teste1",
-        uf: "MS",
-        ativo: true,
-        __v: 0,
-      },
       voltar() {
-        this.$router.push("/Perfil");
+        this.$router.push("/MeusDadosConsulta");
       },
-      editar() {
-        this.$router.push("/MeusDadosEdicao");
+      cancelar() {
+        this.$router.push("/MeusDadosConsulta");
+        // this.$router.push("/Login");
       },
     };
   },
