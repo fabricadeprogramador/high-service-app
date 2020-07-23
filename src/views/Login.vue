@@ -42,7 +42,7 @@
               <v-row justify="center">
                 <v-row>
                     <v-col cols="12">
-                      <router-link to="/">
+                      <router-link to="/" class="text-decoration-none">
                           <v-btn block color="blue" dark flat>Entrar</v-btn>
                       </router-link>
                       </v-col>
