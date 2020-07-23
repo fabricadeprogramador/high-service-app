@@ -254,6 +254,7 @@ export default {
         for (let i = 0; i < this.carrinho.length; i++) {
           precoTotal += this.carrinho[i].valor;
         }
+        precoTotal = precoTotal.toFixed(2);
         return precoTotal;
       },
       geraSelectCartoesDoCliente() {
