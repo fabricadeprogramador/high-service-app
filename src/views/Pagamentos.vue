@@ -70,7 +70,7 @@
             </v-card>
             <v-row class="mt-10">
                 <v-col cols="12">
-                    <router-link to="/perfil">
+                    <router-link to="/cadastrocartao">
                         <v-btn block color="blue" dark flat>Cadastrar Cartão</v-btn>
                     </router-link>
                 </v-col>
