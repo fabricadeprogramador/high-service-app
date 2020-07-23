@@ -85,7 +85,7 @@
                     </v-row>
                     <v-row class="mt-10">
                         <v-col cols="12">
-                            <router-link to="/pagamentos">
+                            <router-link to="/pagamentos" class="text-decoration-none">
                                 <v-btn block color="blue" dark flat>Salvar</v-btn>
                             </router-link>
                         </v-col>
