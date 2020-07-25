@@ -49,7 +49,7 @@
         class="text-decoration-underline mt-3 no-uppercase indigo--text text--darken-4 pa-0"
         width="auto"
         height="auto"
-        @click="acessarMensagem()"
+        @click="acessarTelaMensagem()"
         >Enviar Mensagem</v-btn
       >
     </v-col>
@@ -136,7 +136,9 @@ export default {
       voltar() {
         this.$router.push("/");
       },
-      acessarMensagem() {},
+      acessarTelaMensagem() {
+        this.$router.push("/Mensagem");
+      },
     };
   },
 };

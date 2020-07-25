@@ -12,6 +12,7 @@ import Pagamentos from "../views/Pagamentos.vue";
 import MeusDadosConsulta from "../views/MeusDadosConsulta.vue";
 import MeusDadosEdicao from "../views/MeusDadosEdicao.vue";
 import CadastroCartao from "../views/CadastroCartao.vue";
+import Mensagem from "../views/Mensagem.vue";
 
 Vue.use(VueRouter);
 
@@ -71,6 +72,11 @@ const routes = [
     path: "/CadastroCartao",
     name: "CadastroCartao",
     component: CadastroCartao,
+  },
+  {
+    path: "/Mensagem",
+    name: "Mensagem",
+    component: Mensagem,
   },
 ];
 
